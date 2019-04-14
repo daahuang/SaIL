@@ -83,7 +83,7 @@ class TrainPlanner(SaILPlanner):
             self.depth_so_far[neighbor] = self.depth_so_far[curr_node] + 1
           #If neighbor is goal, then end search
           if neighbor == self.goal_node: 
-            print "Found goal"
+            print("Found goal")
             found_goal = True
             break
           #append to frontiers
@@ -96,7 +96,7 @@ class TrainPlanner(SaILPlanner):
     if found_goal:
       path, path_cost = self.reconstruct_path(self.came_from, self.start_node, self.goal_node, self.cost_so_far)
     else:
-      print ('Found no solution, priority queue empty')
+      print('Found no solution, priority queue empty')
     plan_time = time.time() - start_t
 
     return path, path_cost, curr_expansions, plan_time, self.came_from, self.cost_so_far, self.c_obs, dataset
@@ -168,7 +168,7 @@ class TestPlanner(SaILPlanner):
             self.depth_so_far[neighbor] = self.depth_so_far[curr_node] + 1
           #If neighbor is goal, then end search
           if neighbor == self.goal_node: 
-            print "Found goal"
+            print("Found goal")
             found_goal = True
             break
           #append to frontier
@@ -180,7 +180,7 @@ class TestPlanner(SaILPlanner):
     if found_goal:
       path, path_cost = self.reconstruct_path(self.came_from, self.start_node, self.goal_node, self.cost_so_far)
     else:
-      print ('Found no solution, priority queue empty')
+      print('Found no solution, priority queue empty')
     plan_time = time.time() - start_t
     avg_loss/= (2*curr_expansions)
     avg_loss = np.sqrt(avg_loss)

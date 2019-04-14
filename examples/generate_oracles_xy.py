@@ -1,6 +1,7 @@
 import os
 import sys
 sys.path.insert(0, "../../planning_python")
+# sys.path.insert(0, "/vision2/u/dahuang/projects/diff-plan-2d/heuristic_learning/planning_python")
 import argparse
 from collections import defaultdict
 import json
@@ -44,7 +45,7 @@ prob = PlanningProblem(prob_params)
 
 def get_json_dict(d):
   new_d = dict()
-  for key, v in d.iteritems():
+  for key, v in d.items():
     n_k = str(key)
     new_d[n_k] = v
   return new_d
